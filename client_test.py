@@ -20,7 +20,7 @@ class ClientTest(unittest.TestCase):
                 "stock": "DEF",
             },
         ]
-        """ ------------ Add the assertion below ------------ """
+
         price_a = getDataPoint(quotes[0])
         price_b = getDataPoint(quotes[1])
         prices = {}
@@ -51,8 +51,6 @@ class ClientTest(unittest.TestCase):
         quote_abc = quotes[0]
         assert quote_abc["top_bid"]["price"] > quote_abc["top_ask"]["price"]
 
-    """ ------------ Add more unit tests ------------ """
-
     def test_getDataPoint_calculatePriceAskGreaterThanBid(self):
         quotes = [
             {
@@ -70,7 +68,7 @@ class ClientTest(unittest.TestCase):
                 "stock": "DEF",
             },
         ]
-        """ ------------ Add the assertion below ------------ """
+
         quote_def = quotes[1]
         assert quote_def["top_bid"]["price"] < quote_def["top_ask"]["price"]
 
@@ -91,7 +89,7 @@ class ClientTest(unittest.TestCase):
                 "stock": "DEF",
             },
         ]
-        """ ------------ Add the assertion below ------------ """
+
         # calculate prices
         prices = {}
         for quote in quotes:
@@ -118,7 +116,7 @@ class ClientTest(unittest.TestCase):
                 "stock": "DEF",
             },
         ]
-        """ ------------ Add the assertion below ------------ """
+
         prices = {}
         for quote in quotes:
             stock, bid_price, ask_price, price = getDataPoint(quote)
