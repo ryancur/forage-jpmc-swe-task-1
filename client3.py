@@ -47,8 +47,7 @@ def getRatio(price_a, price_b):
     return price_a / price_b
 
 
-# Main
-if __name__ == "__main__":
+def main(N, QUERY):
     # Query the price once every N seconds.
     for _ in iter(range(N)):
         quotes = json.loads(
@@ -66,3 +65,8 @@ if __name__ == "__main__":
             )
 
         print("Ratio %s" % getRatio(prices["ABC"], prices["DEF"]))
+
+
+# Main
+if __name__ == "__main__":
+    main(N=N, QUERY=QUERY)
